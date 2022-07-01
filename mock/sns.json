@@ -1,0 +1,22 @@
+{
+    "Records": [
+        {
+            "EventSource": "aws:sns",
+            "EventVersion": "1.0",
+            "EventSubscriptionArn": "arn:aws:sns:sa-east-1:347160592712:InvoiceDeliver:b957a9c1-78f4-4317-ac0f-9dee35c24b1d",
+            "Sns": {
+                "Type": "Notification",
+                "MessageId": "f131d287-793f-5dd9-af5b-8aabce5af083",
+                "TopicArn": "arn:aws:sns:sa-east-1:347160592712:InvoiceDeliver",
+                "Subject": null,
+                "Message": "{\"name\": \"antonio nathan erick castro\", \"address\": {\"line1\": \"rua tabuleiro dos maldivas 1314 ap 203\", \"line2\": \"industrial\", \"line3\": \"32230-020 contagem, mg\"}, \"cpf\": \"75543009208\", \"client_number\": \"7056987412\", \"installation_number\": \"30055419330\", \"reference_month\": \"FEV/2022\", \"due_date\": 1639699200, \"total_value\": 115.53, \"connection_type\": \"bi\", \"issue_date\": 1636416000, \"history_table\": [{\"reference_month\": \"NOV/21\", \"kwh_consumption\": 160, \"days\": 32}, {\"reference_month\": \"OUT/21\", \"kwh_consumption\": 167, \"days\": 29}, {\"reference_month\": \"SET/21\", \"kwh_consumption\": 178, \"days\": 31}, {\"reference_month\": \"AGO/21\", \"kwh_consumption\": 232, \"days\": 33}, {\"reference_month\": \"JUL/21\", \"kwh_consumption\": 219, \"days\": 29}, {\"reference_month\": \"JUN/21\", \"kwh_consumption\": 211, \"days\": 32}, {\"reference_month\": \"MAI/21\", \"kwh_consumption\": 151, \"days\": 28}, {\"reference_month\": \"ABR/21\", \"kwh_consumption\": 159, \"days\": 31}, {\"reference_month\": \"MAR/21\", \"kwh_consumption\": 138, \"days\": 32}, {\"reference_month\": \"FEV/21\", \"kwh_consumption\": 116, \"days\": 28}, {\"reference_month\": \"JAN/21\", \"kwh_consumption\": 106, \"days\": 32}, {\"reference_month\": \"DEZ/20\", \"kwh_consumption\": 103, \"days\": 28}, {\"reference_month\": \"NOV/20\", \"kwh_consumption\": 120, \"days\": 33}]}",
+                "Timestamp": "2022-06-16T17:21:41.242Z",
+                "SignatureVersion": "1",
+                "Signature": "adoJS1ApgmHfZuFcyBOE96mWm+GavGSGb/eWgdXzHjjo6kbWm5X4CGLUhfLkXa/r3+5nWPtSYwkMjSwxo0qQzVk5CtetkQsJPsN2TtmCZs4+LPtCes8W/+G6bIF6WLJf940XtkphozfZEUqOTHO0o///70IETF3oZewLpK+BLwNOGrAwefDAsdiavy5r7eWGHa5unos5t7K8LJYCSHI8KfEE6pY4ibpE8b0xnaTYOvaUd38RLIYKrU0+AGnKizBP5HLm3luqn+zINjnTd1yTqEW+xp7OS0nP4YOdoh4wSl0QO-QZMP5kB+SSkiuGFxVx4jkECuvNttsxH8UNZc7m4w==",
+                "SigningCertUrl": "https://sns.sa-east-1.amazonaws.com/SimpleNotificationService-a86cb10b4e1f29c941702d737128f7b6.pem",
+                "UnsubscribeUrl": "https://sns.sa-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:sa-east-1:347160592712:InvoiceDeliver:b957a9c1-78f4-4317-ac0f-9dee35c24b1d",
+                "MessageAttributes": {}
+            }
+        }
+    ]
+}

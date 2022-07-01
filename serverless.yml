@@ -1,0 +1,13 @@
+service: sls-project
+
+provider:
+    name: aws
+    runtime: nodejs16.x
+    region: sa-east-1
+
+functions:
+    # Your functions here
+
+plugins:
+    - serverless-offline
+    - serverless-localstack # Not required but recommended
