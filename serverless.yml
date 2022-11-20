@@ -5,9 +5,9 @@ provider:
     runtime: nodejs16.x
     region: sa-east-1
 
-functions:
-    # Your functions here
+functions:     
 
 plugins:
     - serverless-offline
-    - serverless-localstack # Not required but recommended
+    - serverless-localstack
+    - serverless-plugin-typescript
