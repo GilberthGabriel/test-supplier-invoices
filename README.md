@@ -1,6 +1,6 @@
 # SUPPLIER INVOICES HANDLER
-
-## Comandods
+## Comandos
+Lembre-se de atualizar as chaves e região da AWS no arquivo yml
 
 ```bash
 # Instalar bibliotecas
