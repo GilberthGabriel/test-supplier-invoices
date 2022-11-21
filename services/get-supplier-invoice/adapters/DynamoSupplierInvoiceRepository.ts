@@ -5,19 +5,11 @@ import { ISupplierInvoiceRepository } from '../ports';
 const dynamoDb = new DynamoDB.DocumentClient()
 
 export class DynamoSupplierInvoiceRepository implements ISupplierInvoiceRepository {
-  async save(supplierInvoice: CompleteSupplierInvoiceDTO): Promise<boolean> {
-    const params = {
+  async list(): Promise<CompleteSupplierInvoiceDTO[]> {
+    const data = await dynamoDb.scan({
       TableName: process.env.DYNAMODB_TABLE || '',
-      Item: {
-        ...supplierInvoice
-      }
-    }
+    }).promise()
 
-    try {
-      await dynamoDb.put(params).promise();
-      return true;
-    } catch (e) {
-      return false
-    }
+    return data.Items as CompleteSupplierInvoiceDTO[]
   }
 }

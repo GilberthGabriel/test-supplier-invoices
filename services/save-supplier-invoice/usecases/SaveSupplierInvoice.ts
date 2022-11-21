@@ -1,12 +1,13 @@
-import { SupplierInvoiceDTO } from "../dtos/SupplierInvoice";
-import { ISupplierInvoiceRepository, IUsecase } from "../ports";
+import { SupplierInvoiceDTO } from "../../../shared/dtos/SupplierInvoice";
+import { IUsecase } from "../../../shared/ports/Usecase";
+import { ISupplierInvoiceRepository } from "../ports";
 
 export class SaveSupplierInvoice implements IUsecase<SupplierInvoiceDTO, boolean> {
   constructor(
     private readonly supplierInvoiceRepository: ISupplierInvoiceRepository,
-  ) {}
+  ) { }
 
-  async execute(supplierInvoice: SupplierInvoiceDTO): Promise<boolean> {    
+  async execute(supplierInvoice: SupplierInvoiceDTO): Promise<boolean> {
     let days = 0
     let sum = 0
     supplierInvoice.history_table.forEach(history => {

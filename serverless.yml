@@ -3,11 +3,55 @@ service: sls-project
 provider:
     name: aws
     runtime: nodejs16.x
-    region: sa-east-1
+    region: us-east-1
+    environment:
+        DYNAMODB_TABLE: SupplierInvoices
+        AWS_ACCESS_KEY_ID: AKIA4G4GKIFZKBUIIF4X
+        AWS_SECRET_ACCESS_KEY: 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
+    iam:
+        role:
+            statements:
+                - Effect: Allow
+                  Action:
+                    - dynamodb:PutItem
+                    - dynamodb:Scan
+                  Resource: "arn:aws:dynamodb:${aws:region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
 
-functions:     
+functions:
+    save-supplier-invoice:
+        handler: services/save-supplier-invoice/handler.handle
+    
+    get-supplier-invoice:
+        handler: services/get-supplier-invoice/handler.handle
+        events:
+          - http:
+              path: /get-supplier-invoices
+              method: get
+
+resources:
+  Resources:
+    SupplierInvoicesTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          -
+            AttributeName: installation_number
+            AttributeType: S
+          - 
+            AttributeName: reference_month
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: installation_number
+            KeyType: HASH
+          - 
+            AttributeName: reference_month
+            KeyType: RANGE
 
 plugins:
     - serverless-offline
     - serverless-localstack
     - serverless-plugin-typescript
+

@@ -20,6 +20,6 @@ export type SupplierInvoiceDTO = {
   }[]
 }
 
-export type SaveSupplierInvoiceDTO = SupplierInvoiceDTO & {
+export type CompleteSupplierInvoiceDTO = SupplierInvoiceDTO & {
   avg_kwh_consumption: number
 }
